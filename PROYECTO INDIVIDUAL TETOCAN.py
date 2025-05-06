@@ -1,6 +1,14 @@
 from openpyxl import load_workbook
 import pandas as pd
 
+
+## Cargar el Excel con pandas y de forma más eficiente
+'''
+archivo_excel = "base_datos_sucia.xlsx"
+df = pd.read_excel(archivo_excel)
+df.head()
+'''
+
 #Cargar archivo del Excel con openpyxl
 archivo_excel = "base_datos_sucia.xlsx"
 wb = load_workbook(filename=archivo_excel)
@@ -33,6 +41,16 @@ cambiar_edades = {
     "veinte": 20, "veintiuno": 21, "veintidos": 22, "veintitrés": 23, "veinticuatro": 24,
     "veinticinco": 25, "treinta": 30, "cuarenta": 40
 }
+
+
+## Función un poco más eficiente
+
+def convertir_edad_v2(edad):
+    try:
+        return int(edad) if isinstance(edad, str) else None
+    except:
+        return None
+
 
 def convertir_edad(edad):
     if isinstance(edad, str):
