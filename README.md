@@ -39,7 +39,7 @@ df["Nombre"] = df["Nombre"].str.strip().str.title().fillna("Desconocido")
 df["Fecha de Registro"] = pd.to_datetime(df["Fecha de Registro"], errors="coerce")
 
 # Guardar archivo limpio
-df.to_excel("base_datos_limpia_flexible.xlsx", index=False)
+df.to_excel("base de datos limpia.xlsx", index=False)
 
 🎯 Objetivo
 Este script facilita la limpieza y estructuración de datos en Excel, asegurando un formato uniforme para análisis.
